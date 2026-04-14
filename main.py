@@ -19,8 +19,8 @@ if not os.path.exists(MODEL_PATH):
     with open(MODEL_PATH, "wb") as f:
         f.write(r.content)
 
-# Load model
-model = tf.keras.models.load_model(MODEL_PATH)
+# ✅ FIX: compile=False lagaya
+model = tf.keras.models.load_model(MODEL_PATH, compile=False)
 
 classes = ["Acne", "Eczema", "Psoriasis", "Normal"]
 
